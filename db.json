@@ -1,0 +1,100 @@
+{
+  "atracciones": [
+    {
+      "nombre": "🐲 Montaña Rusa Dragón",
+      "categoria": "extrema",
+      "estado": "fuera de servicio",
+      "alturaMinima": 130,
+      "tiempoEspera": 50,
+      "id": "1"
+    },
+    {
+      "nombre": "🎡 Rueda de la Fortuna Gigante",
+      "categoria": "familiar",
+      "estado": "fuera de servicio",
+      "alturaMinima": 90,
+      "tiempoEspera": 15,
+      "id": "2"
+    },
+    {
+      "nombre": "🌊 Río Salvaje Aventura",
+      "categoria": "acuática",
+      "estado": "fuera de servicio",
+      "alturaMinima": 110,
+      "tiempoEspera": 0,
+      "id": "3"
+    },
+    {
+      "nombre": "🛸 Platillos Voladores Espaciales",
+      "categoria": "infantil",
+      "estado": "fuera de servicio",
+      "alturaMinima": 80,
+      "tiempoEspera": 10,
+      "id": "4"
+    },
+    {
+      "nombre": "👻 Castillo del Terror",
+      "categoria": "extrema",
+      "estado": "fuera de servicio",
+      "alturaMinima": 140,
+      "tiempoEspera": 35,
+      "id": "5"
+    },
+    {
+      "nombre": "🎠 Carrusel Mágico",
+      "categoria": "infantil",
+      "estado": "fuera de servicio",
+      "alturaMinima": 0,
+      "tiempoEspera": 5,
+      "id": "6"
+    },
+    {
+      "nombre": "🎢 Mega Caída Libre",
+      "categoria": "extrema",
+      "estado": "fuera de servicio",
+      "alturaMinima": 150,
+      "tiempoEspera": 45,
+      "id": "7"
+    },
+    {
+      "nombre": "🎪 Circo de las Maravillas",
+      "categoria": "espectáculo",
+      "estado": "fuera de servicio",
+      "alturaMinima": 0,
+      "tiempoEspera": 20,
+      "id": "8"
+    },
+    {
+      "nombre": "🚂 Trencito Mágico",
+      "categoria": "infantil",
+      "estado": "fuera de servicio",
+      "alturaMinima": 0,
+      "tiempoEspera": 10,
+      "id": "9"
+    },
+    {
+      "nombre": "🍿 Cine 4D: Splash",
+      "categoria": "espectáculo",
+      "estado": "fuera de servicio",
+      "alturaMinima": 100,
+      "tiempoEspera": 30,
+      "id": "10"
+    },
+    {
+      "nombre": "🚀 Viaje a las Estrellas",
+      "categoria": "familiar",
+      "estado": "fuera de servicio",
+      "alturaMinima": 120,
+      "tiempoEspera": 0,
+      "id": "11"
+    },
+    {
+      "nombre": "🌪️ Tornado Loco",
+      "categoria": "extrema",
+      "estado": "fuera de servicio",
+      "alturaMinima": 140,
+      "tiempoEspera": 60,
+      "id": "12"
+    }
+  ]
+}

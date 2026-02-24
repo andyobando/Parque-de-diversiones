@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido - Parque Diversiones</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Montserrat:wght@600;700;800&family=Nunito:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    .landing-wrapper {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .landing-box {
+      background: var(--card-bg);
+      border-radius: 40px;
+      padding: 60px 40px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      border: 6px solid var(--border-color);
+      animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .landing-box .logo-img {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+
+    .landing-box h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .landing-box p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    .landing-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .landing-actions .btn {
+      padding: 18px;
+      font-size: 1.2rem;
+      border-radius: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="landing-wrapper">
+    <div class="landing-box">
+      <img src="img/logo1.jpg" alt="Logo Parque" class="logo-img">
+      <h1>🎢 ¡Bienvenido al Parque! 🎡</h1>
+      <p>Selecciona cómo deseas ingresar al sistema para ver nuestras divertidas atracciones.</p>
+
+      <div class="landing-actions">
+        <button id="btnVisitante" class="btn btn-secondary">👀 Entrar como Visitante</button>
+        <button id="btnLoginOpen" class="btn btn-primary">🔒 Acceso Administrador</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal hidden">
+    <div class="modal-content modal-sm">
+      <div class="modal-header">
+        <h2>🔒 Acceso Admin</h2>
+        <button class="btn-close" id="btnCloseLogin">&times;</button>
+      </div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="adminUser">Usuario</label>
+          <input type="text" id="adminUser" required placeholder="admin">
+        </div>
+        <div class="form-group">
+          <label for="adminPass">Contraseña</label>
+          <input type="password" id="adminPass" required placeholder="1234">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="btnCancelLogin">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Ingresar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

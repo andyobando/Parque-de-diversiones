@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Atracciones - Parque Diversiones</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Montserrat:wght@600;700;800&family=Nunito:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <div class="header-logo">
+                <img src="img/logo1.jpg" alt="Logo Parque" class="logo-img">
+            </div>
+            <div class="header-text">
+                <h1>🎡 Parque de Diverciones 🎢</h1>
+                <p>✨ Atracciones del Parque ✨</p>
+            </div>
+            <div class="header-auth" style="margin-left: auto;">
+                <button id="btnVolverInicio" class="btn btn-secondary btn-sm">⬅️ Volver al Inicio</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="admin-panel">
+            <!-- Tabla de Atracciones -->
+            <div class="attractions-list-section">
+                <div class="section-header">
+                    <h2>🎠 ¡Nuestras Divertidas Atracciones!</h2>
+                    <button id="btnNewAttraction" class="btn btn-primary hidden">✨ + Añadir Magia</button>
+                </div>
+
+                <div class="table-container">
+                    <table id="attractionsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Categoría</th>
+                                <th>Estado</th>
+                                <th>Alt. Mínima (cm)</th>
+                                <th>Espera (min)</th>
+                                <th id="thAcciones" class="hidden">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attractionsTbody">
+                            <!-- Elementos dinámicos -->
+                        </tbody>
+                    </table>
+                    <div id="loader" class="loader">Cargando...</div>
+                </div>
+            </div>
+
+            <!-- Sección de Entradas (Solo Visitantes) -->
+            <div id="ticketsSection" class="tickets-section hidden">
+                <div class="section-header">
+                    <h2>🎟️ Tipos de Entradas</h2>
+                </div>
+
+                <div class="tickets-grid">
+                    <!-- Entrada General -->
+                    <div class="ticket-card ticket-pink">
+                        <div class="ticket-top"></div>
+                        <div class="ticket-body">
+                            <h3>Entrada<br>General</h3>
+                            <p class="ticket-disclaimer">*Incluye cargos por servicio</p>
+                        </div>
+                        <div class="ticket-divider"></div>
+                        <div class="ticket-price">
+                            <span class="currency">¢</span><span class="amount">2.750</span>
+                        </div>
+                    </div>
+
+                    <!-- Pase Especial -->
+                    <div class="ticket-card ticket-yellow">
+                        <div class="ticket-top"></div>
+                        <div class="ticket-body">
+                            <h3>Pase<br>Especial</h3>
+                            <p class="ticket-disclaimer">*Incluye cargos por servicio</p>
+                        </div>
+                        <div class="ticket-divider"></div>
+                        <div class="ticket-price">
+                            <span class="currency">¢</span><span class="amount">13.950</span>
+                        </div>
+                    </div>
+
+                    <!-- Pase Estelar -->
+                    <div class="ticket-card ticket-red">
+                        <div class="ticket-top"></div>
+                        <div class="ticket-body">
+                            <h3>Pase<br>Estelar</h3>
+                            <p class="ticket-disclaimer">*Incluye cargos por servicio.<br>Solo aplica para diciembre.
+                            </p>
+                        </div>
+                        <div class="ticket-divider"></div>
+                        <div class="ticket-price">
+                            <span class="currency">¢</span><span class="amount">6.750</span>
+                        </div>
+                    </div>
+
+                    <!-- Pase Especial Anual -->
+                    <div class="ticket-card ticket-orange">
+                        <div class="ticket-top"></div>
+                        <div class="ticket-body">
+                            <h3>Pase<br>Especial<br>Anual</h3>
+                            <p class="ticket-disclaimer">*Incluye cargos por servicio</p>
+                        </div>
+                        <div class="ticket-divider"></div>
+                        <div class="ticket-price">
+                            <span class="currency">¢</span><span class="amount">49.650</span>
+                        </div>
+                    </div>
+
+                    <!-- Pase Rápido -->
+                    <div class="ticket-card ticket-blue">
+                        <div class="ticket-top"></div>
+                        <div class="ticket-body">
+                            <h3>Pase<br>Rápido</h3>
+                            <p class="ticket-disclaimer">*Incluye cargos por servicio</p>
+                        </div>
+                        <div class="ticket-divider"></div>
+                        <div class="ticket-price">
+                            <span class="currency">¢</span><span class="amount">23.250</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- Formulario de Creación/Edición Modal -->
+            <div id="attractionModal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 id="modalTitle">🌟 Nueva Atracción Genial</h2>
+                        <button class="btn-close" id="btnCloseModal">&times;</button>
+                    </div>
+
+                    <form id="attractionForm">
+                        <input type="hidden" id="attractionId">
+
+                        <div class="form-group">
+                            <label for="nombre">Nombre de la Atracción</label>
+                            <input type="text" id="nombre" required placeholder="Ej: Montaña Rusa">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="categoria">Categoría</label>
+                            <select id="categoria" required>
+                                <option value="">Seleccione...</option>
+                                <option value="infantil">Infantil</option>
+                                <option value="familiar">Familiar</option>
+                                <option value="extrema">Extrema</option>
+                                <option value="acuática">Acuática</option>
+                                <option value="espectáculo">Espectáculo</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select id="estado" required>
+                                <option value="activa">Activa</option>
+                                <option value="en mantenimiento">En Mantenimiento</option>
+                                <option value="fuera de servicio">Fuera de Servicio</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="alturaMinima">Altura Mínima (cm)</label>
+                                <input type="number" id="alturaMinima" min="0" required placeholder="0">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tiempoEspera">Tiempo de Espera (min)</label>
+                                <input type="number" id="tiempoEspera" min="0" required placeholder="0">
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" id="btnCancelModal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary" id="btnSave">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Eliminar Confirmación Modal -->
+    <div id="deleteModal" class="modal hidden">
+        <div class="modal-content modal-sm">
+            <div class="modal-header">
+                <h2>Confirmar Eliminación</h2>
+            </div>
+            <p>¿Estás seguro de que deseas eliminar la atracción: <strong id="deleteAttractionName"></strong>?</p>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="btnCancelDelete">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="btnConfirmDelete">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
